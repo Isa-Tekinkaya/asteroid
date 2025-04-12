@@ -15,12 +15,18 @@ def main():
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     while True:
+        # Calculate delta time (time passed since last frame)
+        dt = clock.tick(60) / 1000  # 60 FPS cap, convert to seconds
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        # Clear the screen and redraw everything
         screen.fill("black")
-        p.draw(screen)
-        pygame.display.flip()
-        dt = clock.tick(60) / 1000
+        p.update(dt)  # Update player with the correct delta time
+        p.draw(screen)  # Draw player
+
+        pygame.display.flip() # Update the screen
+        
 if __name__ == "__main__":
     main()
