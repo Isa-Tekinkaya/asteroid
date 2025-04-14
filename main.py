@@ -14,13 +14,13 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
-
+    asteroids = pygame.sprite.Group()
     
-    Player.containers = (updateable, drawable)
+    Player.containers = (updateable, drawable,)
     
     # Initialize an AsteroidField instance
     AsteroidField.containers = (updateable,)
-    Asteroid.containers = (updateable, drawable)
+    Asteroid.containers = (updateable, drawable, asteroids)
     pygame.init()
     clock = pygame.time.Clock()
     p = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 )
@@ -30,19 +30,23 @@ def main():
 
     while True:
         # Calculate delta time (time passed since last frame)
-        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         # Clear the screen and redraw everything
         screen.fill("black")
-        for sprite in updateable:
-            sprite.update(dt)  # Update player with the correct delta time
-            
-        for sprite in drawable:  # Draw player
+
+        updateable.update(dt)  # Update player with the correct delta time
+
+        for asteroid in asteroids:
+            if asteroid.collision(p):
+                print("Game over!")
+                pygame.quit()       # Quit the game
+                return              # Exit the main function
+        for sprite in drawable:     # Draw player
             sprite.draw(screen)
                            
-        pygame.display.flip() # Update the screen
+        pygame.display.flip()       # Update the screen
         dt = clock.tick(60) / 1000  # 60 FPS cap, convert to seconds
 
 if __name__ == "__main__":
