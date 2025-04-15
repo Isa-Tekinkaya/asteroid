@@ -1,38 +1,20 @@
-🪐 Asteroid
-A minimalist space shooter game built with Pygame, where you pilot a spaceship, dodge asteroids, and blast your way to safety!
+# 🪐 Asteroid
 
-🚀 Gameplay
-Control a spaceship that can rotate and shoot lasers.
+A minimalist space shooter game made with **Pygame**. Fly through space, avoid asteroids, and shoot them down!
 
-Asteroids appear randomly and split into smaller pieces when destroyed.
+## 🎮 Controls
 
-Survive as long as possible without crashing!
+| Key         | Action                 |
+|-------------|------------------------|
+| **W**         | Accelerate forward      |
+| **A / D**     | Rotate left / right     |
+| **Spacebar**  | Shoot laser             |
+| **ESC**       | Quit the game           |
 
-🎮 Controls
+## 🚀 Getting Started
 
-
-Key	Action
-W	Accelerate forward
-A / D	Rotate left / right
-Spacebar	Shoot laser
-🧱 Features
-Asteroid splitting mechanic
-
-Smooth ship rotation and movement
-
-Collision detection for bullets and asteroids
-
-Custom object system using OOP
-
-🔧 Installation
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/Isa-Tekinkaya/asteroid.git
 cd asteroid
 pip install -r requirements.txt
 python main.py
-🧠 Tech Stack
-Python
-
-Pygame
