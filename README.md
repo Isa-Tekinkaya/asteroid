@@ -12,8 +12,8 @@ A minimalist space shooter game made with **Pygame**. Fly through space, avoid a
 | **ESC**       | Quit the game           |
 
 
-📘 What I Learned
-How to use Pygame to create interactive 2D games
+
+Using Pygame to create interactive 2D games
 
 Structuring a game using Object-Oriented Programming
 
